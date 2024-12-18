@@ -15,6 +15,6 @@
     if($usuario_autenticado) {
         echo 'Usuário autenticado!';
     } else {
-        echo 'Erro na autenticação! ';
+        header('location: index.php?login=erro');
     }
 ?>
