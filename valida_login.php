@@ -1,5 +1,9 @@
 <?php 
+    print_r($_POST);
+    echo "<br>";
 
-    echo "Oi, estamos aqui!!!";
+    echo $_POST['email'];
+    echo "<br>";
+    echo $_POST['senha'];
 
 ?>
