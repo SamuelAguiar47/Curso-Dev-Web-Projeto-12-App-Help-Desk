@@ -1,6 +1,14 @@
 <?php 
+
+    session_start();
+
+    print_r($_SESSION);
+    echo '<hr>';
+
+    //Variável que verifica se a autenticação foi realizada
     $usuario_autenticado = false;
 
+    //usuários do sistema
     $usuarios_app = array(
         array('email' => 'adm@teste.com.br', 'senha' => '123456'),
         array('email' => 'user@teste.com.br', 'senha' => 'abcd')
@@ -14,7 +22,9 @@
 
     if($usuario_autenticado) {
         echo 'Usuário autenticado!';
+        $_SESSION['autenticado'] = 'SIM';
     } else {
+        $_SESSION['autenticado'] = 'NAO';
         header('location: index.php?login=erro');
     }
 ?>
