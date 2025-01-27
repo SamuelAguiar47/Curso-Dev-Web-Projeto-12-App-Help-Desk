@@ -2,9 +2,6 @@
 
     session_start();
 
-    print_r($_SESSION);
-    echo '<hr>';
-
     //Variável que verifica se a autenticação foi realizada
     $usuario_autenticado = false;
 
