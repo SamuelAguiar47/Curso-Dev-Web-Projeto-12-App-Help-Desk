@@ -11,10 +11,12 @@
     $registro = fgets($arquivo);
     $chamados[] = $registro;
   }
-
+  
+  /*
   echo '<pre>';
   print_r($chamados);
   echo '</pre>';
+  */
 
   //fechar o arquivo aberto
   fclose($arquivo);
@@ -66,6 +68,13 @@
                 
                 $chamado_dados = explode('#', $chamado);
 
+                if($_SESSION['perfil_id'] == 2) {
+                  //só vamos exibir o chamado se ele foi criado pelo usuário.
+                  if($_SESSION['id'] != $chamado_dados[0]) {
+                    continue;
+                  }
+                }
+
                 if(count($chamado_dados) < 3) {
                   continue;
                 }
@@ -74,9 +83,9 @@
             
               <div class="card mb-3 bg-light">
                 <div class="card-body">
-                  <h5 class="card-title"><?= $chamado_dados[0] ?></h5>
-                  <h6 class="card-subtitle mb-2 text-muted"><?= $chamado_dados[1] ?></h6>
-                  <p class="card-text"><?= $chamado_dados[2] ?></p>
+                  <h5 class="card-title"><?= $chamado_dados[1] ?></h5>
+                  <h6 class="card-subtitle mb-2 text-muted"><?= $chamado_dados[2] ?></h6>
+                  <p class="card-text"><?= $chamado_dados[3] ?></p>
 
                 </div>
               </div>
