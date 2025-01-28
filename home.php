@@ -2,9 +2,9 @@
 
   require_once ('validador_acesso.php');
 
-  echo '<pre>';
+  /*echo '<pre>';
   print_r($_SESSION);
-  echo '</pre>';
+  echo '</pre>';*/
 ?>
 
 <html>
